@@ -21,8 +21,8 @@ public class TopKSelector {
 //		String outputStateDir = "./output/top_10_states.txt";
 //		String outputOccupDir = "./output/top_10_occupations.txt";
 		String inputFilePath = args[0];
-		String outputStatePath = args[1];
-		String outputOccupPath = args[2];
+		String outputOccupPath = args[1];
+		String outputStatePath = args[2];
 		File f1 = new File(outputStatePath);
 		File f2 = new File(outputOccupPath);
 		if (f1.isFile()) {
