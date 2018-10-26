@@ -32,7 +32,9 @@ Define:
 
 -The number of targets as `k`
 
+Time complexity is `O(n + mlogk)`
 
+Space compleisty is `O(m + k)`
 
 ## Run instructions
 
