@@ -2,7 +2,7 @@
 Solution to Insight data engineer code challenge implemented in Java: Calculating Top 10 states and occupations for certified H1B applicants.
 
 ## Table of contents
-1. [Problem](README.md##Problem)
+1. [Problem](README.md#H1B_Statistics##Problem)
 2. [Approach](README.md##Approach)
 3. [Run instructions](README.md##Run-instructions)
 4. [Alternative approaches](README.md##Alternative-approaches)
