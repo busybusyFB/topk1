@@ -25,9 +25,14 @@ Step 4: Convert the minHeaps to lists and reverse the lists. The reversed list s
 **Performance of this approach**
 
 Define:
--The number of entries as 'n'
--The number of unique keys in the hash map as 'm'
--The number of targets as 'k'
+
+-The number of entries as `n`
+
+-The number of unique keys in the hash map as `m`
+
+-The number of targets as `k`
+
+
 
 ## Run instructions
 
