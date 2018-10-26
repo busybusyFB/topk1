@@ -9,7 +9,7 @@ Solution to Insight data engineer code challenge: Calculating Top 10 states and 
 
 ## Problem
 
-See the detailed description in the [Github repo of InsightDataScience] (https://github.com/InsightDataScience/h1b_statistics).
+See the detailed description in the [Github repo of InsightDataScience](https://github.com/InsightDataScience/h1b_statistics).
 
 ## Approach
 
