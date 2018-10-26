@@ -82,7 +82,7 @@ public class TopKSelector {
 			System.out.print("Time to read file and establish hash tables: " + (t2 - t1) + "\n");
 			System.out.print("Total number of different certified states is " + states.size() + "; of jobs is: " + jobs.size() + "\n");
 			
-			//method 1 maxHeap
+			//Get top k entries from prioprity queue
 			List<Map.Entry<String, Integer>> topKstatesList = getTopKFromMap(states,numK);
 			List<String> statePercent = new ArrayList<>();
 			//calculate percentage
@@ -100,49 +100,11 @@ public class TopKSelector {
 			int t3 = (int) System.currentTimeMillis();
 			System.out.print("Time of top K in using pq: " + (t3 - t2) + "\n");
 			
-			//uncomment this block when debugging the first method
-//			System.out.println("Total certified number is " + certifiedNum + "\nThe top 10 states are");
-//			for (int i = topKstatesList.size() -1 ; i > -1; i--) {
-//				System.out.println(topKstatesList.get(i).getKey() + " " + topKstatesList.get(i).getValue() + " " + statePercent.get(i));
-//			}
-//			System.out.println("The top 10 titles are");
-//			for (int i = topTKtitlesList.size() -1 ; i > -1; i--) {
-//				System.out.println(topTKtitlesList.get(i).getKey() + " " + topTKtitlesList.get(i).getValue() + " " + titlePercent.get(i));
-//			}
-			
 			//save results as output files
 			saveAsText(topTKtitlesList, titlePercent, outputOccupPath, "title");
 			saveAsText(topKstatesList, statePercent, outputStatePath,"state");
 			int t4 = (int) System.currentTimeMillis();
 			System.out.print("Time of saving data: " + (t4 - t3) + "\n");
-			
-			//endofmathed1
-			
-			//method 2 bucketsort
-//			List<String> topKstatesList = getTopKFromMap(states,topKNum,certifiedNum);
-//			List<String> topTKtitlesList = getTopKFromMap(jobs,topKNum, certifiedNum);
-//			List<String> statePercent = new ArrayList<>();
-//			for (String key : topKstatesList) {
-//				double percent = (double) states.get(key)/ certifiedNum * 100;
-//				statePercent.add(String.format("%.1f", percent));
-//			}
-//			List<String> titlePercent = new ArrayList<>();
-//			for (String key : topTKtitlesList) {
-//				double percent = (double) jobs.get(key)/ certifiedNum * 100;
-//				titlePercent.add(String.format("%.1f", percent));
-//			}
-//			System.out.println("Total certified number is " + certifiedNum + "\nThe top 10 states are");
-//			for (int i = 0; i < topKstatesList.size(); i++) {
-//				System.out.println(topKstatesList.get(i) + " " + states.get(topKstatesList.get(i)) + " " + statePercent.get(i));
-//			}
-//			System.out.println("The top 10 titles are");
-//			for (int i = 0; i < topTKtitlesList.size(); i++) {
-//				System.out.println(topTKtitlesList.get(i) + " " + jobs.get(topTKtitlesList.get(i)) + " " + titlePercent.get(i));
-//			}
-//			int t5 = (int) System.currentTimeMillis();
-//			System.out.print("Time of bucket sort: " + (t5 - t2));
-			//endofmethod2
-			
 			
 			bfreader.close();
 			return true;
@@ -168,29 +130,6 @@ public class TopKSelector {
 			topKList.add(topKPq.poll());
 		}
 		return topKList;
-	}
-	
-	//Use bucket sorted
-	public List<String> getTopKFromMap(Map<String, Integer> hashMap, int k, int total) {
-		List<String> res = new ArrayList<>();
-		List<String>[] buckets = new List[total + 1];
-        for(String key: hashMap.keySet()) {
-            int freq = hashMap.get(key);
-            if(buckets[freq] == null) {
-                buckets[freq] = new ArrayList<>();
-            }
-            buckets[freq].add(key);
-        }
-        for(int pos = buckets.length - 1; pos >= 0; pos--) {
-            if(buckets[pos] != null) {
-            	//sort buckets first a --> z
-            	buckets[pos].sort(new StrComparator());
-                for(int i = 0; i < buckets[pos].size() && res.size() < k; i++) {
-                    res.add(buckets[pos].get(i));
-                }
-            }
-        }
-		return res;
 	}
 	
 	//unify the format of case entries
