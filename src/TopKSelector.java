@@ -25,8 +25,12 @@ public class TopKSelector {
 		String outputOccupPath = args[2];
 		File f1 = new File(outputStatePath);
 		File f2 = new File(outputOccupPath);
-		f1.delete();
-		f2.delete();
+		if (f1.isFile()) {
+			f1.delete();
+		}
+		if (f2.isFile()) {
+			f2.delete();
+		}
 		TopKSelector selector = new TopKSelector();
 		selector.selectTopK(inputFilePath, outputStatePath, outputOccupPath, 10);
 	}
@@ -45,7 +49,6 @@ public class TopKSelector {
 			}
 			
 			String[] attributes = header.split(";");
-			int numColumn = attributes.length;
 			int StatusCol = -1;
 			int WorkStateCol = -1;
 			int SOCnameCol = -1;
@@ -99,7 +102,7 @@ public class TopKSelector {
 //				System.out.println(status + " " + state  + " " + title + "\n");
 			}
 			
-			System.out.print("Total number of states in hashmap is " + states.size() + " titles is :" + titles.size() + "\n");
+			System.out.print("Total number of states in hashmap is " + states.size() + "; titles is: " + titles.size() + "\n");
 //			for(String key: states.keySet()) {
 //				System.out.print(key + "\n");
 //			}
@@ -119,13 +122,13 @@ public class TopKSelector {
 				double percent = (double) entry.getValue()/ certifiedNum * 100;
 				titlePercent.add(String.format("%.1f", percent));
 			}
-			System.out.println("Total certified number is " + certifiedNum + "\nThe top 10 states are");
+//			System.out.println("Total certified number is " + certifiedNum + "\nThe top 10 states are");
 			for (int i = topKstatesList.size() -1 ; i > -1; i--) {
-				System.out.println(topKstatesList.get(i).getKey() + " " + topKstatesList.get(i).getValue() + " " + statePercent.get(i));
+//				System.out.println(topKstatesList.get(i).getKey() + " " + topKstatesList.get(i).getValue() + " " + statePercent.get(i));
 			}
-			System.out.println("The top 10 titles are");
+//			System.out.println("The top 10 titles are");
 			for (int i = topTKtitlesList.size() -1 ; i > -1; i--) {
-				System.out.println(topTKtitlesList.get(i).getKey() + " " + topTKtitlesList.get(i).getValue() + " " + titlePercent.get(i));
+//				System.out.println(topTKtitlesList.get(i).getKey() + " " + topTKtitlesList.get(i).getValue() + " " + titlePercent.get(i));
 			}
 //			System.out.print(System.currentTimeMillis() + "\n");
 			
