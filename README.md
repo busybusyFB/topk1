@@ -23,7 +23,11 @@ Step 3: Iterative over the entrys of the two hash maps and add each of them into
 Step 4: Convert the minHeaps to lists and reverse the lists. The reversed list stores the top 10 states and occupations.
 
 **Performance of this approach**
-Define the number of entries as 'n', the number of unique keys in the hash map as 'm' and the number of targets as 'k'.
+
+Define:
+-The number of entries as 'n'
+-The number of unique keys in the hash map as 'm'
+-The number of targets as 'k'
 
 ## Run instructions
 
