@@ -34,19 +34,22 @@ Time complexity is `O(n + mlogk)`
 
 - Convert minHeap to list and revert it `O(k)`
 
-- In total `o(n + mlogk + k) = O(n + mlogk)`
+Space compleisty is `O(m + k)` (hashmap + minHeap)
 
-Space compleisty is `O(m + k)`
-
-- Hash map `O(m)`
-
-- minHeap `O(k)`
+In this case, `n >> m ~ k`, so TC = `O(n)`.
 
 ## Run instructions
 
-The program can be launched by running run.sh bash script.
+The program can be launched by running *run.sh* bash script.
 
 ```
 ./run.sh
 ```
+
+The input file is ./input/h1b_input.csv. The results will be saved as *top_10_states.txt* and *top_10_occupations.txt* in *./output/*.
+
 ## Alternative approaches
+
+- HashMap + bucketSort
+
+- TreeMap
