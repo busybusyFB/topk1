@@ -20,13 +20,14 @@ Step 4: Convert the minHeaps to lists and reverse the lists. The reversed list s
 
 Define:
 
--The number of entries as `n`
+- The number of entries as `n`
 
--The number of unique keys in the hash map as `m`
+- The number of unique keys in the hash map as `m`
 
--The number of targets as `k`
+- The number of targets as `k`
 
 Time complexity is `O(n + mlogk)`
+
 
 Space compleisty is `O(m + k)`
 
