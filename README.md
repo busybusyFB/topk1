@@ -46,7 +46,7 @@ The program can be launched by running *run.sh* bash script.
 ./run.sh
 ```
 
-The input file is ./input/h1b_input.csv. The results will be saved as *top_10_states.txt* and *top_10_occupations.txt* in *./output/*.
+The input file is **_./input/h1b_input.csv_**. The results will be saved as **_top_10_states.txt_** and **_top_10_occupations.txt_** in the directory **_./output/_**.
 
 ## Alternative approaches
 
