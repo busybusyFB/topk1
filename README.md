@@ -41,10 +41,10 @@ In this case, `n >> m ~ k`, so TC = `O(n)`.
 **Edge cases**
 
 - Ununified column names in different years
-| 2008 | 2009-2014 | 2015 - 2017 |
-| Approved Status | STATUS | CASE_STATUS |
-| OCCUPATIONAL_TITLE | LCA_CASE_SOC_NAME | SOC_NAME |
-| State_1 | LCA_CASE_WORKLOC1_STATE | WORKSITE_STATE|
+2008 | 2009-2014 | 2015 - 2017
+Approved Status | STATUS | CASE_STATUS
+OCCUPATIONAL_TITLE | LCA_CASE_SOC_NAME | SOC_NAME
+State_1 | LCA_CASE_WORKLOC1_STATE | WORKSITE_STATE
 
 ## Run instructions
 
