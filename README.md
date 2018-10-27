@@ -28,9 +28,25 @@ Define:
 
 Time complexity is `O(n + mlogk)`
 
+- Establish hash maps `O(n)`
+
+- Establish minHeap `O(mlogk)`
+
+- Convert minHeap to list and revert it `O(k)`
+
+- In total `o(n + mlogk + k) = O(n + mlogk)`
 
 Space compleisty is `O(m + k)`
 
+- Hash map `O(m)`
+
+- minHeap `O(k)`
+
 ## Run instructions
 
+The program can be launched by running run.sh bash script.
+
+```
+./run.sh
+```
 ## Alternative approaches
