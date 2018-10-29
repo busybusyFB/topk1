@@ -36,7 +36,7 @@ Time complexity is `O(n + mlogk)`
 
 Space compleisty is `O(m + k)` (hashmap + minHeap)
 
-In this case, `n >> m ~ k`, so TC = `O(n)`. **The bottleneck of this program lies in raw data reading and field extraction.**
+In this case, `n >> m ~ k`, so TC = `O(n)`. **The bottleneck of this program lies in raw data reading and  target field extraction from strings.**
 
 **Edge cases**
 
