@@ -53,7 +53,6 @@ public class H1BTopKSelector {
 			//get target column indexes from header line
 			//targetCols = [column of status, column of work state, column of occupation name]
 			int[] targetCols = getTargetColIndices(header, new String[]{".*STATUS.*", ".*SOC_NAME.*", ".*WORK.*STATE.*"});
-			System.out.println(targetCols[0] + " " + targetCols[1] +  " " + targetCols[2]);
 			//read and process data case by case
 			String line = "";
 			while((line = bfreader.readLine()) != null) {
