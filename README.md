@@ -28,7 +28,7 @@ Define:
 
 Time complexity is `O(n + mlogk)`
 
-- Establish hash maps `O(n)`
+- Read raw data and update hash maps `O(n)`
 
 - Establish minHeap `O(mlogk)`
 
@@ -36,7 +36,7 @@ Time complexity is `O(n + mlogk)`
 
 Space compleisty is `O(m + k)` (hashmap + minHeap)
 
-In this case, `n >> m ~ k`, so TC = `O(n)`.
+In this case, `n >> m ~ k`, so TC = `O(n)`. **The bottleneck of this program lies in raw data reading and field extraction.**
 
 **Edge cases**
 
