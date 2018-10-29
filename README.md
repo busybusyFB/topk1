@@ -14,7 +14,7 @@ Step 2: Use minHeaps with maximum size of 10. The ordering is primarily based on
 
 Step 3: Iterative over the entrys of the two hash maps and add each of them into the corresponding minHeaps. If the size of a minHeap exceeds 10, delete the mininum entry in the minHeap.
 
-Step 4: Convert the minHeaps to lists and reverse the lists. The reversed list stores the top 10 states and occupations.
+Step 4: Convert the minHeaps to lists and reverse the lists. The reversed lists store the top 10 states and occupations.
 
 **Performance of this approach**
 
@@ -32,7 +32,7 @@ Time complexity is `O(n + mlogk)`
 
 - Establish minHeap `O(mlogk)`
 
-- Convert minHeap to list and revert it `O(k)`
+- Convert minHeap to list and revert it `O(klogk + k)`
 
 Space compleisty is `O(m + k)` (hashmap + minHeap)
 
@@ -44,11 +44,15 @@ In this case, `n >> m ~ k`, so TC = `O(n)`.
 
 2008 | 2009-2014 | 2015 - 2017
 :----:|:----------:|:-------------:
-Approved Status | STATUS | CASE_STATUS
-OCCUPATIONAL_TITLE | LCA_CASE_SOC_NAME | SOC_NAME
-State_1 | LCA_CASE_WORKLOC1_STATE | WORKSITE_STATE
+Approved Status | **STATUS** | CASE_**STATUS**
+OCCUPATIONAL_TITLE | LCA_CASE_**SOC_NAME** | **SOC_NAME**
+State_1 | LCA_CASE_**WORK**LOC1_**STATE** | **WORK**SITE_**STATE**
+
+solution: For data in2009 - 2017, use "**STATUS**", "**SOC_Name**" and "**WORK...STATE**" as keywords.
 
 - Extra semicolons in some cells cause wrong partitioning of entry string
+
+solution: Extra semicolons are always quoted. Therefore, all the quoted semicolons are being removed.
 
 ## Run instructions
 
@@ -57,9 +61,10 @@ The program can be launched by running *run.sh* bash script.
 ```
 ./run.sh
 ```
+The main function of class H1BTopKSelector will be executed.
 
-The input file is **_./input/h1b_input.csv_**. The results will be saved as **_top_10_states.txt_** and **_top_10_occupations.txt_** in the directory **_./output/_**.
+The input file is **_./input/h1b_input.csv_**. The results will be saved as **_top_10_states.txt_** and **_top_10_occupations.txt_** in the directory **_./output_**. They can be modifed in the script *run.sh*.
 
 ## Alternative approaches
 
-- HashMap + bucketSort
+- HashMap + bucketSort (The sorting phare takes `O(m)` instead of `o(mlogk)`, while the space complexity increases to `O(n)`)
