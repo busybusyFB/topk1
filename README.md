@@ -48,7 +48,7 @@ Approved Status | **STATUS** | CASE_**STATUS**
 OCCUPATIONAL_TITLE | LCA_CASE_**SOC_NAME** | **SOC_NAME**
 State_1 | LCA_CASE_**WORK**LOC1_**STATE** | **WORK**SITE_**STATE**
 
-solution: For data in2009 - 2017, use "**STATUS**", "**SOC_Name**" and "**WORK...STATE**" as keywords.
+solution: For data in 2009 - 2017, use "**STATUS**", "**SOC_Name**" and "**WORK...STATE**" as keywords.
 
 - Extra semicolons in some cells cause wrong partitioning of entry string
 
@@ -61,7 +61,7 @@ The program can be launched by running *run.sh* bash script.
 ```
 ./run.sh
 ```
-The main function of class H1BTopKSelector will be executed.
+The main function of class H1B_TopK will be executed.
 
 The input file is **_./input/h1b_input.csv_**. The results will be saved as **_top_10_states.txt_** and **_top_10_occupations.txt_** in the directory **_./output_**. They can be modifed in the script *run.sh*.
 
