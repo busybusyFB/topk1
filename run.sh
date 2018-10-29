@@ -7,6 +7,6 @@ mkdir ./output
 echo "Previous files removed."
 #compile and run java
 echo "compile and run java:"
-javac ./src/TopKSelector.java
+javac ./src/*.java
 cd ./src
-java TopKSelector ../input/h1b_input.csv ../output/top_10_occupations.txt ../output/top_10_states.txt
+java H1BTopKSelector ../input/h1b_input.csv ../output/top_10_occupations.txt ../output/top_10_states.txt
