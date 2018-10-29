@@ -63,6 +63,7 @@ public class H1BTopKSelector {
 				if (!fields[targetCols[0]].toUpperCase().equals("CERTIFIED")) {
 					continue;
 				}
+
 				//extract work state and occupation name
 				String job = fields[targetCols[1]];
 				String state = fields[targetCols[2]];
@@ -107,15 +108,20 @@ public class H1BTopKSelector {
 	public String preprocessEntry(String line) {
 		char[] charArr = line.toUpperCase().toCharArray();
 		int quoteNum = 0;
+		//replace semicolons(;) in quotes with space
 		for (int i = 0; i < charArr.length; i++) {
 			if (charArr[i] == ';' && quoteNum % 2 == 1) {
-				charArr[i] = 'a';
+				charArr[i] = ' ';
 			}
 			if (charArr[i] == '\"') {
 				quoteNum++;
 			}
 		}
-		return new String(charArr);
+		
+		//remove " in the string
+		String line1 = new String(charArr);
+		String resLine = line1.replaceAll("\"", "");
+		return resLine;
 	}
 	
 	public List<String> computePercent(List<String> keyList, Map<String, Integer> map, int totalNum){

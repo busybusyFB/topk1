@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 
-/* This class sorted (key, value) pairs stored in a map and return the top k of them with higher priority as a list.
+/* This class sorted (key, value) pairs stored in a map and return a list of the top k among them with higher priority.
  * Input: map + other necessary parameter
  * Output: sorted list of top k elements selected in the map
  * Each method of the class implements one selecting and sorting algorithm
