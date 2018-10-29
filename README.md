@@ -8,7 +8,7 @@ See the detailed description in the [Github repo of InsightDataScience](https://
 ## Approach
 **HashMap + Priority queue**
 
-Step 1: Read H1B cases line by line from raw data, compute the counts of states and occupations of each certified H1B applications and save them in two hash maps (one for states, the other for occupations). the keys are state or occupation names, and the values are the corresponding frequencies.
+Step 1: Read H1B cases line by line from raw data, compute the counts of states and occupations of each certified H1B applications and save them in two hash maps (one for states, the other for occupations). the keys are state or occupation names, and the values are the corresponding frequencies. Data reading and map updating are simultaneous to avoid out of memory issue.
 
 Step 2: Use minHeaps with maximum size of 10. The ordering is primarily based on the frequencies of each state and occupation. If frequecies are the same, the ordering is then based on the lexical order of state or occupation name.
 
