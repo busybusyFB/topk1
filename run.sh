@@ -9,4 +9,4 @@ echo "Previous files removed."
 echo "compile and run java:"
 javac ./src/*.java
 cd ./src
-java H1BTopKSelector ../input/h1b_input.csv ../output/top_10_occupations.txt ../output/top_10_states.txt
+java H1B_TopK ../input/h1b_input.csv ../output/top_10_occupations.txt ../output/top_10_states.txt
